@@ -1,0 +1,13 @@
+{
+  "name": "Flashcards-app",
+  "version": "1.0.0",
+  "description": "BRAINLY Internship challenge",
+  "main": "index.js",
+  "author": "Tom",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0"
+  }
+}
