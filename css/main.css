@@ -4,7 +4,6 @@ body {
 
 .main {
   width: 100%;
-  min-height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,4 +95,12 @@ body {
 .green {
   color: #53cf92;
   font-weight: bold;
+}
+
+.sg-button-secondary--full {
+  flex: 1 1 100%;
+}
+
+#result {
+  flex: 1 1 100%;
 }

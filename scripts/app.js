@@ -2,6 +2,8 @@
 
 const http = new XMLHttpRequest();
 
+const mainBox = document.getElementById('main-box');
+mainBox.style.minHeight = `${window.innerHeight - 140}px`;
 const startScreen = document.getElementById('start-screen');
 const answerScreen = document.getElementById('answer-screen');
 const endScreen = document.getElementById('end-screen');
@@ -50,7 +52,7 @@ const flashcardsApp = {
   loadData() {
     if (http.readyState === 4 && http.status === 200) {
       flashcardsApp.data = JSON.parse(http.response);
-      flashcardsApp.questionDeck = flashcardsApp.data;
+      flashcardsApp.questionDeck = [...flashcardsApp.data];
     } else if (http.readyState === 4 && http.status === 404) {
       alert('&#9888; 404 Data Not Found.');
     } else if (http.readyState === 4 && http.status === 500) {
@@ -101,9 +103,10 @@ const flashcardsApp = {
   restartQuiz() {
     this.numberOfCorrectAnswers = 0;
     this.numberOfIncorrectAnswers = 0;
-    this.questionDeck = this.data;
+    this.questionDeck = [...flashcardsApp.data];
     this.answerA = null;
     this.answerB = null;
+    progressBar.style.width = `${this.numberOfCorrectAnswers * 10}%`;
   }
 };
 
