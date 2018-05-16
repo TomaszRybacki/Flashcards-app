@@ -9,17 +9,92 @@
   <meta name="author" content="Tomasz Rybacki">
   <meta name="description" content="BRAINLY | Internship challenge">
 
-  <title>Flashcards app</title>
+  <title>FLASHCARDS APP</title>
   <link rel="icon" type="image/png" sizes="96x96" href="images/favicon96x96.png">
-  <!--
-  <link rel="stylesheet" href="css/reset.css">
+  <link href="https://styleguide.brainly.com/134.2.1/style-guide.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/main.css">
-  -->
-  <link href="https://styleguide.brainly.com/134.2.1/style-guide.css" rel="stylesheet"/>
 </head>
 
 <body>
 
+  <div class="sg-layout">
+
+    <header class="sg-header no-shadow">
+      <div class="sg-header__container">
+        <div class="sg-header__content">
+          <a href="#" class="sg-home-button">
+                  <img class="sg-home-button__logo-small" alt="logo" src="https://styleguide.brainly.com/images/logos/brainly-mobile-426ef8718f.svg">
+                  <img class="sg-home-button__logo-big" alt="logo" src="https://styleguide.brainly.com/images/logos/brainly-761d75d6ea.svg">
+          </a>
+          <div class="sg-header__middle"></div>
+          <h1 class="sg-header-primary
+                 sg-header__right
+                 sg-text--uppercase
+                 sg-header-primary--xsmall
+                 sg-header-primary--light">
+            flash
+            <svg class="sg-icon sg-icon--mustard sg-icon--x24">
+          <use xlink:href="#icon-lightning"></use>
+          </svg> cards
+          </h1>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="main__box">
+
+        <div class="sg-box sg-box--with-shadow display-none">
+          <div class="sg-box__hole sg-text--to-center"><span class="sg-text--emphasised">Welcome to flashcards app!</span>Your goal is to answer 10 questions about Poland. Good luck!
+            <button class="sg-button-primary sg-button-primary--full-width sg-button-primary--alt margin-top">start</button>
+          </div>
+        </div>
+
+        <div class="sg-box sg-box--with-shadow display-none">
+          <div class="sg-box__hole sg-text--to-center sg-text--emphasised">Who was the leader of Solidarity?
+            <button class="sg-button-secondary sg-button-secondary--alt margin-top">Lech Wałęsa</button>
+            <button class="sg-button-secondary sg-button-secondary--alt margin-top">Aleksander Kwaśniewski</button>
+          </div>
+        </div>
+
+        <div class="sg-box sg-box--with-shadow display-none">
+          <div class="sg-box__hole sg-text--to-center"><span class="sg-text--emphasised">Congratulation, you made it!</span>Your correct/wrong answers score ratio is 10/3.
+            <button class="sg-button-primary sg-button-primary--full-width sg-button-primary--alt margin-top">play again</button>
+          </div>
+        </div>
+
+       <div class="overlay display-none">
+        <div class="answer-box" id="answer">
+
+          <div class="correct-answer">
+            <svg class="sg-icon sg-icon--mint sg-icon--x48">
+                <use xlink:href="#icon-check"></use>
+            </svg>
+          </div>
+
+          <div class="wrong-answer display-none">
+            <svg class="sg-icon sg-icon--peach sg-icon--x48">
+                <use xlink:href="#icon-x"></use>
+            </svg>
+          </div>
+
+        </div>
+        </div>
+
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-bar__fill"></div>
+      </div>
+    </main>
+
+
+    <footer class="sg-footer">
+      <div class="sg-footer__container">
+        <div class="sg-text sg-text--small sg-text--to-center">Designed and coded with <svg class="sg-icon sg-icon--x10 sg-icon--peach"><use xlink:href="#icon-heart"></use></svg> by Tomasz Rybacki</div>
+      </div>
+    </footer>
+  </div>
 
 
   <script src="scripts/app.js"></script>
