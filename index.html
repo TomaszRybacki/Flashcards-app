@@ -44,47 +44,52 @@
     <main class="main">
       <div class="main__box">
 
-        <div class="sg-box sg-box--with-shadow display-none">
+        <div id="start-screen" class="sg-box sg-box--with-shadow">
           <div class="sg-box__hole sg-text--to-center"><span class="sg-text--emphasised">Welcome to flashcards app!</span>Your goal is to answer 10 questions about Poland. Good luck!
-            <button class="sg-button-primary sg-button-primary--full-width sg-button-primary--alt margin-top">start</button>
+            <button id="start-button" class="sg-button-primary sg-button-primary--full-width sg-button-primary--alt margin-top">start</button>
           </div>
         </div>
 
-        <div class="sg-box sg-box--with-shadow display-none">
-          <div class="sg-box__hole sg-text--to-center sg-text--emphasised">Who was the leader of Solidarity?
-            <button class="sg-button-secondary sg-button-secondary--alt margin-top">Lech Wałęsa</button>
-            <button class="sg-button-secondary sg-button-secondary--alt margin-top">Aleksander Kwaśniewski</button>
+        <div id="answer-screen" class="sg-box sg-box--with-shadow display-none">
+          <div class="sg-box__hole sg-text--to-center ">
+            <span id="question" class="sg-text--emphasised">Question goes here ?</span>
+            <button id="answerA-button" class="sg-button-secondary sg-button-secondary--alt margin-top">
+            Answer A
+            </button>
+            <button id="answerB-button" class="sg-button-secondary sg-button-secondary--alt margin-top">
+            Answer B
+            </button>
           </div>
         </div>
 
-        <div class="sg-box sg-box--with-shadow display-none">
-          <div class="sg-box__hole sg-text--to-center"><span class="sg-text--emphasised">Congratulation, you made it!</span>Your correct/wrong answers score ratio is 10/3.
-            <button class="sg-button-primary sg-button-primary--full-width sg-button-primary--alt margin-top">play again</button>
+        <div id="end-screen" class="sg-box sg-box--with-shadow display-none">
+          <div class="sg-box__hole sg-text--to-center"><span class="sg-text--emphasised">Congratulation, you made it!</span><span id="result">Your correct/wrong answers score ratio is 10/3.</span>
+            <button id="restart-button" class="sg-button-primary sg-button-primary--full-width sg-button-primary--alt margin-top">
+            play again
+            </button>
           </div>
         </div>
 
-       <div class="overlay display-none">
-        <div class="answer-box" id="answer">
-
-          <div class="correct-answer">
+        <div id="correct-answer--overlay" class="overlay display-none">
+          <div id="correct-answer" class="answer-box">
             <svg class="sg-icon sg-icon--mint sg-icon--x48">
-                <use xlink:href="#icon-check"></use>
-            </svg>
+                  <use xlink:href="#icon-check"></use>
+                </svg>
           </div>
-
-          <div class="wrong-answer display-none">
-            <svg class="sg-icon sg-icon--peach sg-icon--x48">
-                <use xlink:href="#icon-x"></use>
-            </svg>
-          </div>
-
         </div>
+
+        <div id="wrong-answer--overlay" class="overlay display-none">
+          <div id="wrong-answer" class="answer-box">
+            <svg class="sg-icon sg-icon--peach sg-icon--x48">
+                  <use xlink:href="#icon-x"></use>
+                </svg>
+          </div>
         </div>
 
       </div>
 
       <div class="progress-bar">
-        <div class="progress-bar__fill"></div>
+        <div id="quiz-progress" class="progress-bar__fill"></div>
       </div>
     </main>
 
