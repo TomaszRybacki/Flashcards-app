@@ -11,7 +11,7 @@ All the details that are not specified above are left for the developer to decid
 ## Technical requirements
 
 * Vanilla (no frameworks or libraries) JavaScript ES2015+
-* UI based on the Brainly styleguide - https://styleguide.brainly.com
+* [UI based on the Brainly styleguide](https://styleguide.brainly.com)
 * Custom styles in the BEM convention
 * Fully working on the latest stable versions of major evergreen browsers (Chrome, Firefox, Safari, Edge)
 * Built with mobile first approach in mind
@@ -19,7 +19,7 @@ All the details that are not specified above are left for the developer to decid
 
 ## Live preview
 
-[Link to github.io preview page - coming soon]()
+[Link to github.io preview page](https://tomaszrybacki.github.io/Flashcards-app/)
 
 ## Built with
 
