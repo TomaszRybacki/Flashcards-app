@@ -3,7 +3,6 @@
 const http = new XMLHttpRequest();
 
 const mainBox = document.getElementById('main-box');
-mainBox.style.minHeight = `${window.innerHeight - 140}px`;
 const startScreen = document.getElementById('start-screen');
 const answerScreen = document.getElementById('answer-screen');
 const endScreen = document.getElementById('end-screen');
@@ -20,6 +19,14 @@ const correctAnswerOverlay = document.getElementById('correct-answer--overlay');
 const wrongAnswerOverlay = document.getElementById('wrong-answer--overlay');
 const correctAnswer = document.getElementById('correct-answer');
 const wrongAnswer = document.getElementById('wrong-answer');
+
+const correctAnswerSound = document.createElement('audio');
+correctAnswerSound.setAttribute('src', 'sounds/correctAnswerSound.mp3');
+const wrongAnswerSound = document.createElement('audio');
+wrongAnswerSound.setAttribute('src', 'sounds/wrongAnswerSound.mp3');
+const endGameSound = document.createElement('audio');
+endGameSound.setAttribute('src', 'sounds/endGameSound.mp3');
+
 
 // Objects
 
@@ -66,6 +73,7 @@ const flashcardsApp = {
     if (this.numberOfCorrectAnswers === 10) {
       animation.toggleClass(answerScreen, 'display-none');
       animation.toggleClass(endScreen, 'display-none');
+      endGameSound.play();
       resultElem.innerHTML = (
         `correct answers: <span class="green">${this.numberOfCorrectAnswers}</span><br>
          wrong answers: <span class="red">${this.numberOfIncorrectAnswers}</span>`
@@ -90,11 +98,13 @@ const flashcardsApp = {
     if (selectedAnswer) {
       this.numberOfCorrectAnswers += 1;
       progressBar.style.width = `${this.numberOfCorrectAnswers * 10}%`;
+      correctAnswerSound.play();
 
       animation.play(correctAnswerOverlay, correctAnswer);
     } else {
       this.numberOfIncorrectAnswers += 1;
       this.questionDeck.push(firstItem);
+      wrongAnswerSound.play();
 
       animation.play(wrongAnswerOverlay, wrongAnswer);
     }
@@ -151,3 +161,9 @@ restartButton.addEventListener('click', () => {
   flashcardsApp.restartQuiz.call(flashcardsApp);
 });
 
+function setMinHeight() {
+  mainBox.style.minHeight = `${window.innerHeight - 140}px`;
+}
+
+window.onresize = setMinHeight;
+setMinHeight();
