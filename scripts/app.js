@@ -27,6 +27,9 @@ wrongAnswerSound.setAttribute('src', 'sounds/wrongAnswerSound.mp3');
 const endGameSound = document.createElement('audio');
 endGameSound.setAttribute('src', 'sounds/endGameSound.mp3');
 
+const errorOverlay = document.getElementById('error-overlay');
+const errorMessage = document.getElementById('error-message');
+
 
 // Objects
 
@@ -61,11 +64,14 @@ const flashcardsApp = {
       flashcardsApp.data = JSON.parse(http.response);
       flashcardsApp.questionDeck = [...flashcardsApp.data];
     } else if (http.readyState === 4 && http.status === 404) {
-      alert('&#9888; 404 Data Not Found.');
+      animation.toggleClass(errorOverlay, 'display-none');
+      errorMessage.innerHTML = '&#9888; 404 Data Not Found. Try again later';
     } else if (http.readyState === 4 && http.status === 500) {
-      alert('&#9888; 500 Internal Server Error.');
+      animation.toggleClass(errorOverlay, 'display-none');
+      errorMessage.innerHTML = '&#9888; 500 Internal Server Error. Try again later';
     } else if (http.readyState === 4) {
-      alert('&#9888; Wczytywanie danych, nie powiodło się.');
+      animation.toggleClass(errorOverlay, 'display-none');
+      errorMessage.innerHTML = '&#9888; Data loading fail. Try again later';
     }
   },
 
